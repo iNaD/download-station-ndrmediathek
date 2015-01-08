@@ -56,8 +56,9 @@ class SynoFileHostingNDRMediathek {
         $curl = curl_init();
 
         curl_setopt($curl, CURLOPT_URL, $this->Url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_USERAGENT, DOWNLOAD_STATION_USER_AGENT);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
 
         $rawXML = curl_exec($curl);
 
