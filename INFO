@@ -1,0 +1,10 @@
+{
+    "name": "ndrmediathek",
+    "hostprefix": "ndr.de",
+    "displayname": "NDR Mediathek",
+    "version": "0.1",
+    "authentication": "no",
+    "module": "ndrmediathek.php",
+    "class": "SynoFileHostingNDRMediathek",
+    "description": "Download Videos from NDR Mediathek"
+}
