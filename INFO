@@ -2,9 +2,9 @@
     "name": "ndrmediathek",
     "hostprefix": "ndr.de",
     "displayname": "NDR Mediathek",
-    "version": "0.1",
+    "version": "0.3a",
     "authentication": "no",
-    "module": "ndrmediathek.php",
+    "module": "ndrmediathek-updater.php",
     "class": "SynoFileHostingNDRMediathek",
     "description": "Download Videos from NDR Mediathek"
 }

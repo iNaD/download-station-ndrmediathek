@@ -1,3 +1,5 @@
 *.host
 *.md5
 *.tar.gz
+vendor/
+build/
