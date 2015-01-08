@@ -7,7 +7,7 @@
  * @license http://opensource.org/licenses/MIT Licensed under MIT License
  */
 
-require_once 'vendor/selfupdateable.php';
+require_once 'selfupdateable.php';
 
 class SynoFileHostingNDRMediathek extends TheiNaDSelfupdateable {
 

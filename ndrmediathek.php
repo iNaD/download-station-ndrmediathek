@@ -7,7 +7,7 @@
  * @license http://opensource.org/licenses/MIT Licensed under MIT License
  */
 
-require_once 'vendor/provider.php';
+require_once 'provider.php';
 
 class TheiNaDNDRMediathek extends TheiNaDProvider {
 
