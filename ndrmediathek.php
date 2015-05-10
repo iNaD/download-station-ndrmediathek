@@ -2,7 +2,7 @@
 
 /**
  * @author Daniel Gehn <me@theinad.com>
- * @version 0.2
+ * @version 0.3a
  * @copyright 2015 Daniel Gehn
  * @license http://opensource.org/licenses/MIT Licensed under MIT License
  */
@@ -14,7 +14,7 @@ class SynoFileHostingNDRMediathek {
     private $HostInfo;
 
     private $LogPath = '/tmp/ndr-mediathek.log';
-    private $LogEnabled = false;
+    private $LogEnabled = true;
 
     public function __construct($Url, $Username = '', $Password = '', $HostInfo = '') {
         $this->Url = $Url;
@@ -49,8 +49,6 @@ class SynoFileHostingNDRMediathek {
 
     //This function gets the download url
     private function Download() {
-        $hits = array();
-
         $this->DebugLog("Getting Content of $this->Url");
 
         $curl = curl_init();
@@ -78,8 +76,39 @@ class SynoFileHostingNDRMediathek {
 
         $this->DebugLog('Best format is ' . $url);
 
+        $url = trim($url);
+
+        $episodeTitle = '';
+        $filename = '';
+        $pathinfo = pathinfo($url);
+
+        $match = array();
+
+        if(preg_match('#var trackTitle = "(.*?)";#i', $rawXML, $match) == 1)
+        {
+            $episodeTitle = $match[1];
+            $filename .= $episodeTitle;
+        }
+        else
+        {
+            $filename .= $pathinfo['basename'];
+        }
+
+
+        if(empty($filename))
+        {
+            $filename = $pathinfo['basename'];
+        }
+        else
+        {
+            $filename .= '.' . $pathinfo['extension'];
+        }
+
+        $this->DebugLog('Filename based on episodeTitle "' . $episodeTitle . '" is: "' . $filename . '"');
+
         $DownloadInfo = array();
-        $DownloadInfo[DOWNLOAD_URL] = trim($url);
+        $DownloadInfo[DOWNLOAD_URL] = $url;
+        $DownloadInfo[DOWNLOAD_FILENAME] = $filename;
 
         return $DownloadInfo;
     }
