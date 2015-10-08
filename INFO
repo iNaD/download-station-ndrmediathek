@@ -2,7 +2,7 @@
     "name": "ndrmediathek",
     "hostprefix": "ndr.de",
     "displayname": "NDR Mediathek",
-    "version": "0.3b",
+    "version": "0.3c",
     "authentication": "no",
     "module": "ndrmediathek.php",
     "class": "SynoFileHostingNDRMediathek",
