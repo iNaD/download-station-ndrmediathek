@@ -24,14 +24,7 @@ class SynoFileHostingNDRMediathek extends TheiNaDProvider {
 
         preg_match('#itemprop="contentUrl" content="(.*?)"#is', $rawXML, $sources);
 
-        $url = '';
-
-        $source = $sources[1];
-
-        if(strpos($source, "media.ndr.de") !== false)
-        {
-            $url = $source;
-        }
+        $url = $sources[1];
 
         $this->DebugLog('Best format is ' . $url);
 
