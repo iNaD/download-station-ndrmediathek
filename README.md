@@ -1,5 +1,7 @@
 # Synology Download Station Hoster Plugin für NDR Mediathek
 
+## Dieses Projekt wird nicht mehr weitergeführt, schaue stattdessen hier vorbei: https://github.com/iNaD/ds-mediatheken
+
 ## Installation
 
 1. Im Webinterface von der Download Station die Einstellungen aufrufen.
